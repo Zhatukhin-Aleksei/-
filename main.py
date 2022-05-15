@@ -304,7 +304,7 @@ def meta(curs):
      
     
 #======================================incremental=============================================================   
-#-----------passports-раоботает исправно------------------------------------------------------------------
+
 # realizovana proverka dublei 
   
     #  TABLE  truncate_stg_pssprt_blcklst
@@ -325,8 +325,8 @@ where PASSPORT_NUM  not in (
 def inser_dwh_fact_pssprt_blcklst(curs):
     curs.execute(isert_dwh_fact_pssprt_blcklst)
     print('isert_dwh_fact_pssprt_blcklst . . . . . . . . . . OK')
-# ------------------transaction--работает исправно------------------------------------------
-# ---------------реализована проверка дублей----------------------------------
+# ------------------transaction--------------------------------------------
+
    
     #  TABLE truncat_avzh_stg_transactions
 truncate_stg_transactions = """truncate table de3at.avzh_stg_transactions """     
@@ -349,11 +349,11 @@ def inser_dwh_fact_transactions(curs):
 
 # ------------------------------------terminals-------------------------------------------
 
-        #  TABLE   работатет
+        #  TABLE   
 insert_stg_terminals_del = """insert into de3at.avzh_stg_terminals_del ( TERMINAL_ID )
 select TERMINAL_ID from de3at.avzh_stg_terminals"""     
 
-        #  TABLE   работатет
+        #  TABLE   
 update_dwh_dim_terminals_hist = """insert into de3at.avzh_dwh_dim_terminals_hist (
     TERMINAL_ID, 
     TERMINAL_TYPE, 
@@ -462,7 +462,7 @@ when not matched then
     values ( 'de3at', 'terminals_source', src.max_update_dt )"""     
 
 
-    #  TABLE работает
+    #  TABLE 
 
 truncate_stg_terminals = """truncate table de3at.avzh_stg_terminals """     
 def truncat_stg_terminals_source(curs):
@@ -647,13 +647,13 @@ insert_stg_cards = """insert into de3at.avzh_stg_cards ( CARD_NUM, ACCOUNT, CREA
 select  CARD_NUM, ACCOUNT,CREATE_DT , UPDATE_DT 
 from bank.cards
 where CREATE_DT > coalesce( 
-								( 
-								select max_update_dt
-								from de3at.avzh_meta
-								where schema_name = 'de3at' and table_name = 'cards_source'
-								)
-								,to_date( '1800.01.01', 'YYYY.MM.DD' )
-						)"""     
+				( 
+				select max_update_dt
+				from de3at.avzh_meta
+				where schema_name = 'de3at' and table_name = 'cards_source'
+				)
+				,to_date( '1800.01.01', 'YYYY.MM.DD' )
+		   )"""     
 def inser_stg_cards(curs):
     curs.execute(insert_stg_cards)
     print('insert_stg_cards . . . . . . . . . . OK')
@@ -792,13 +792,13 @@ insert_stg_clients = """ insert into de3at.avzh_stg_clients ( CLIENT_ID, LAST_NA
 select  CLIENT_ID, LAST_NAME,FIRST_NAME, PATRONYMIC, DATE_OF_BIRTH, PASSPORT_NUM, PASSPORT_VALID_TO, PHONE, CREATE_DT, UPDATE_DT 
 from bank.clients
 where CREATE_DT > coalesce( 
-								( 
-								select max_update_dt
-								from de3at.avzh_meta
-								where schema_name = 'de3at' and table_name = 'clients_source'
-								)
-								,to_date( '1800.01.01', 'YYYY.MM.DD' )
-							)"""     
+					( 
+					select max_update_dt
+					from de3at.avzh_meta
+					where schema_name = 'de3at' and table_name = 'clients_source'
+					)
+					,to_date( '1800.01.01', 'YYYY.MM.DD' )
+			)"""     
 def inser_stg_clients(curs):
     curs.execute(insert_stg_clients)
     print('insert_stg_clients . . . . . . . . . . OK')
