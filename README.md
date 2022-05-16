@@ -1,14 +1,14 @@
 # -Проект: Автоматизация ETL - процесса поиска фрода в банковских транзакциях.
 Исходные данные -  в каталоге /data  имется выгрузка данных из неких систем за три дня:
-1. актуальный список заблокированных паспортов (date, passport)
+- Актуальный список заблокированных паспортов (date, passport)
 passport_blacklist_01032021.xlsx
 passport_blacklist_02032021.xlsx 
 passport_blacklist_03032021.xlsx
-2. список терминалов полным срезом (terminal_id, terminal_type, terminal_city, terminal_address
+- Список терминалов полным срезом (terminal_id, terminal_type, terminal_city, terminal_address
 terminals_01032021.xlsx
 terminals_02032021.xlsx 
 terminals_03032021.xlsx
-3. список транзакций за текущих день (transaction_id; transaction_date; amount; card_num; oper_type; oper_result; terminal)
+- Список транзакций за текущих день (transaction_id; transaction_date; amount; card_num; oper_type; oper_result; terminal)
 transactions_01032021.txt  
 transactions_02032021.txt 
 transactions_03032021.txt
