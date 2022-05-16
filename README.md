@@ -1,14 +1,17 @@
 # -Проект: Автоматизация ETL - процесса поиска фрода в банковских транзакциях.
-Исходные данные :  в каталоге /data  имется выгрузка данных из неких систем за три дня
-      passport_blacklist_01032021.xlsx   (актуальных список заблокированных паспортов)
-      passport_blacklist_02032021.xlsx   (date,	passport)
-      passport_blacklist_03032021.xlsx
-      terminals_01032021.xlsx  (список терминалов полным срезом  )
-      terminals_02032021.xlsx  (terminal_id,	 terminal_type,	 terminal_city,	 terminal_address)
-      terminals_03032021.xlsx
-      transactions_01032021.txt  (список транзакций за текущих день)
-      transactions_02032021.txt  (transaction_id; transaction_date; amount; card_num; oper_type; oper_result; terminal)
-      transactions_03032021.txt
+Исходные данные -  в каталоге /data  имется выгрузка данных из неких систем за три дня:
+1.актуальный список заблокированных паспортов (date, passport)
+passport_blacklist_01032021.xlsx
+passport_blacklist_02032021.xlsx 
+passport_blacklist_03032021.xlsx
+2. список терминалов полным срезом (terminal_id, terminal_type, terminal_city, terminal_address
+terminals_01032021.xlsx
+terminals_02032021.xlsx 
+terminals_03032021.xlsx
+3. список транзакций за текущих день (transaction_id; transaction_date; amount; card_num; oper_type; oper_result; terminal)
+transactions_01032021.txt  
+transactions_02032021.txt 
+transactions_03032021.txt
 Python скрипт читает файлы в каталоге с минимальной датой, загружает данные в хранилище даных, перемещает прочитанные файлы в каталог /backup, строит витрину отчетности из данных в хранилище.
 Построение отчета:
 1. Совершение операций при просроченном или заблокированном паспорте.
