@@ -14,7 +14,7 @@ terminals_03032021.xlsx
 transactions_01032021.txt  <br>
 transactions_02032021.txt <br>
 transactions_03032021.txt <br>
-База данных банка:
+</p>База данных банка:<br>
 - Таблица аккаунтов - ACCOUNTS (ACCOUNT, VALID_TO, CLIENT, CREATE_DT, UPDATE_DT)<br>
 - Таблица карт клиентов CARDS (CARD_NUM, ACCOUNT, CREATE_DT, UPDATE_DT)<br>
 - Таблица клиентов CLIENTS (CLIENT_ID, LAST_NAME, FIRST_NAME, PATRONYMIC, DATE_OF_BIRTH, PASSPORT_NUM, PASSPORT_VALID_TO, PHONE, CREATE_DT, UPDATE_DT)<br>
