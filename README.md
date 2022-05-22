@@ -13,7 +13,12 @@ terminals_03032021.xlsx
 - Список транзакций за текущих день (transaction_id; transaction_date; amount; card_num; oper_type; oper_result; terminal)<br>
 transactions_01032021.txt  <br>
 transactions_02032021.txt <br>
-transactions_03032021.txt
+transactions_03032021.txt <br>
+База данных банка:
+- Таблица аккаунтов - ACCOUNTS (ACCOUNT, VALID_TO, CLIENT, CREATE_DT, UPDATE_DT)<br>
+- Таблица карт клиентов CARDS (CARD_NUM, ACCOUNT, CREATE_DT, UPDATE_DT)<br>
+- Таблица клиентов CLIENTS (CLIENT_ID, LAST_NAME, FIRST_NAME, PATRONYMIC, DATE_OF_BIRTH, PASSPORT_NUM, PASSPORT_VALID_TO, PHONE, CREATE_DT, UPDATE_DT)<br>
+
 </p>Python скрипт читает файлы в каталоге с минимальной датой, загружает данные в хранилище даных, перемещает прочитанные файлы в каталог /backup, строит витрину отчетности из данных в хранилище по слудующим признакам:<br>
 1. Совершение операций при просроченном или заблокированном паспорте.</br>
 2. Совершение опрераций при недействующем договоре.</br>
