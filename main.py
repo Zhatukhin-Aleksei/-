@@ -10,8 +10,8 @@ import jaydebeapi
 def get_conn():
     conn = jaydebeapi.connect(
         'oracle.jdbc.driver.OracleDriver',
-        'jdbc:oracle:thin:****/************@de-oracle.chronosavant.ru:1521/deoracle',
-        ['de3at', 'bardthebowman'],
+        'jdbc:oracle:thin:user_name/password@de-oracle.chronosavant.ru:1521/deoracle',
+        ['user_name', 'password'],
         '/home/de3at/ojdbc8.jar'
     )
     return conn
